@@ -20,6 +20,10 @@ module CapitalIQ
         @header_map[header][header]
       end
 
+      def all_rows(header)
+        @header_map[header].all_rows
+      end
+
       def to_hash
         Hash[self.headers.collect { |h| [h, self[h]] }]
       end

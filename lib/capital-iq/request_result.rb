@@ -15,6 +15,12 @@ module CapitalIQ
       result.first
     end
 
+    def all_rows
+      self.Rows.collect do |row|
+        v = row["Row"]
+      end
+    end
+
     private
     def value_array(header)
       header_idx = self.Headers.index(header)
