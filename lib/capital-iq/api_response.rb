@@ -21,7 +21,7 @@ module CapitalIQ
       end
 
       def all_rows(header)
-        @header_map[header].all_rows
+        @header_map[header].all_rows(header)
       end
 
       def to_hash
