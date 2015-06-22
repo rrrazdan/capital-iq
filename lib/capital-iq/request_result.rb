@@ -15,10 +15,10 @@ module CapitalIQ
       result.first
     end
 
-    def all_rows
-      self.Rows.collect do |row|
-        v = row["Row"]
-      end
+    def all_rows(header)
+      header_idx = self.Headers.index(header)
+      raise ArgumentError, "Unknown header '#{header}'" if header_idx.nil?
+      self.Rows.reject{|row| row["Row"][header_idx] == 'Data Unavailable' }.collect{|row| row["Row"]}
     end
 
     private
