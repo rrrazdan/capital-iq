@@ -1,3 +1,4 @@
 pkg/
 .env
 spec/vcr_cassettes
+.idea/
